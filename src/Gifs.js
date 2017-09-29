@@ -22,13 +22,19 @@ componentDidMount(){
   render() {
     return(
       <div>
-        <h1>Let Me Upgrade You</h1>
+        <h1>Bey Good GIF Search</h1>
+        <ul>
+          {this.props.gifs.map(function(listGifs){
+            return <li>{listGifs}</li>;
+          })}
+        </ul>
+      )
+    }
         <p className="App-intro">
         </p>
       </div>
 
     )
   }
-}
 
-export default Gifs;
+export Gifs;

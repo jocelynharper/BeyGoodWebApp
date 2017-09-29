@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Gifs searchWord="funny"></Gifs>
+        <Gifs></Gifs>
       </div>
     );
   }
