@@ -1,35 +1,36 @@
 import React, { Component } from 'react';
-import {FormControl, FormGroup} from 'react-boostrap';
+import {ControlLabel, FormControl, FormGroup, HelpBlock, mountNode} from 'react-bootstrap';
 import ReactDOM from 'react-dom';
+import Gifs from './Gifs.js';
+
 
 class Search extends Component{
 
-  componentDidMount() {
-
-    const formInstance = (
-      <form>
-        <FormGroup bsSize="large">
-          <FormControl type="text" placeholder="Large text" />
-        </FormGroup>
-        <FormGroup>
-          <FormControl type="text" placeholder="Normal text" />
-        </FormGroup>
-        <FormGroup bsSize="small">
-          <FormControl type="text" placeholder="Small text" />
-        </FormGroup>
-      </form>
-    );
-
-    ReactDOM.render(formInstance, mountNode);
-
+  constructor(props){
+    super(props)
+    this.state = {}
   }
 
-render() {
+  render() {
+     return (
+       <form>
+         <FormGroup
+           controlId="formBasicText">
+           <ControlLabel>Working example with validation</ControlLabel>
+           <FormControl
+             type="text"
+             value={this.state.value}
+             placeholder="Enter text"
+             onChange={this.handleChange}
+           />
+           <FormControl.Feedback />
+           <HelpBlock>Validation is based on string length.</HelpBlock>
+         </FormGroup>
+       </form>
+     );
+   }
+ }
 
-  return(
-    <formInstance></formInstance>
-  )
-  }
-}
+ ReactDOM.render(<Search />, document.getElementById('root'));
 
 export default Search;

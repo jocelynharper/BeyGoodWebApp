@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 const base_URL = 'http://api.giphy.com/v1/gifs/'
 const base_search = 'search?q=beyonce+'
-const search_criteria = 'funny'
+var search_criteria = '';
 const api_key = '&api_key=uTm7il4oTA1SjAp12nAouLLKMstq6ldV'
 const search_limit = '&limit=10'
 
-const giphyURL = search => base_URL.concat(base_search, search_criteria, api_key, search_limit);
+var giphyURL = search => base_URL.concat(base_search, search_criteria, api_key, search_limit);
+
 
 class Gifs extends Component{
   constructor(props){
