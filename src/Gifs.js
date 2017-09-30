@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 
-const giphyURL = search =>
-  'http://api.giphy.com/v1/gifs/search?q=funny+beyonce&api_key=uTm7il4oTA1SjAp12nAouLLKMstq6ldV&limit=10'
+const base_URL = 'http://api.giphy.com/v1/gifs/'
+const base_search = 'search?q=beyonce+'
+const search_criteria = 'funny'
+const api_key = '&api_key=uTm7il4oTA1SjAp12nAouLLKMstq6ldV'
+const search_limit = '&limit=10'
+
+const giphyURL = search => base_URL.concat(base_search, search_criteria, api_key, search_limit);
 
 class Gifs extends Component{
   constructor(props){
@@ -10,31 +15,25 @@ class Gifs extends Component{
   }
 
 componentDidMount(){
-    fetch(giphyURL(this.props.searchWord))
+    fetch(giphyURL(this.props.gifs))
       .then(data => data.json())
       .then(data => {
+        let gifs = data.data.map((gifs, i) => {return gifs.images})
+        console.log(gifs);
         this.setState({
-          gifs: data
+          gifs
         })
       })
+      .catch(err => console.error(this.props.url, err.toString()))
 }
 
-  render() {
+render() {
     return(
       <div>
-        <h1>Bey Good GIF Search</h1>
-        <ul>
-          {this.props.gifs.map(function(listGifs){
-            return <li>{listGifs}</li>;
-          })}
-        </ul>
-      )
-    }
-        <p className="App-intro">
-        </p>
+        <h1>Let Me Upgrade You</h1>
       </div>
+)}
+}
 
-    )
-  }
 
-export Gifs;
+export default Gifs;
