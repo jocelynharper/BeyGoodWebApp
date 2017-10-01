@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ControlLabel, FormControl, FormGroup, HelpBlock, mountNode} from 'react-bootstrap';
+import {ControlLabel, FormControl, FormGroup, mountNode} from 'react-bootstrap';
 import ReactDOM from 'react-dom';
 import Gifs from './Gifs.js';
 
@@ -11,22 +11,33 @@ class Search extends Component{
     this.state = {}
   }
 
+  handleSetValue(value){
+    this.setState({
+      value: value.target.innerText
+    }, () => {
+      if(this.props.onChange){
+        this.props.onChange(this.state.value);
+      }
+    });
+  }
+
   render() {
      return (
+       <div>
        <form>
          <FormGroup
            controlId="formBasicText">
            <ControlLabel>Working example with validation</ControlLabel>
            <FormControl
              type="text"
-             value={this.state.value}
+             value={this.props.search_criteria}
              placeholder="Enter text"
-             onChange={this.handleChange}
+             onChange={this.state.value}
            />
            <FormControl.Feedback />
-           <HelpBlock>Validation is based on string length.</HelpBlock>
          </FormGroup>
        </form>
+       </div>
      );
    }
  }
