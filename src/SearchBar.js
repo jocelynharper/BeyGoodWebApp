@@ -3,18 +3,18 @@ import React, { Component } from 'react';
 class SearchBar extends Component{
   constructor(){
     super();
-    this.state={ term: '' }
+    this.state={ value: '' }
   }
 
-  onInputChange(term){
-    this.setState({term});
-    this.props.onTermChange(term);
+  onInputChange(value){
+    this.setState({value});
+    this.props.onTermChange(value);
   }
 
   render(){
     return(
       <div className = "search-bar">
-        <input placeholder="Search for your favorite Beyoncé .gifs" onChange={event => this.onInputChange(event.target.value)} />
+        <input placeholder="Search for your favorite Beyoncé .gifs!" onChange={event => this.onInputChange(event.target.value)} />
       </div>
     );
   }
