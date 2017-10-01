@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ControlLabel, FormControl, FormGroup, mountNode} from 'react-bootstrap';
+import {ControlLabel, FormControl, FormGroup} from 'react-bootstrap';
 import autoBind from 'react-autobind';
 import ReactDOM from 'react-dom';
 import Gifs from './Gifs.js';
@@ -25,7 +25,7 @@ class Search extends Component{
   }
 
   makeupafunction(){
-    search_criteria = this.props.onClick(this.state.value.trim());
+    //const search_criteria = value.trim();
   }
 
   render() {

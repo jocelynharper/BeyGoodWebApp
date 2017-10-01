@@ -3,7 +3,7 @@ import Search from './Search.js';
 
 const base_URL = 'http://api.giphy.com/v1/gifs/'
 const base_search = 'search?q=beyonce+'
-const search_criteria = Search.search_criteria
+const search_criteria = Search.value
 const api_key = '&api_key=uTm7il4oTA1SjAp12nAouLLKMstq6ldV'
 const search_limit = '&limit=10'
 
