@@ -26,6 +26,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>don't bore me - just show me</h1>
+        <br></br>
       <SearchBar onTermChange={term => this.handleTermChange(term)} />
       <GifList gifs={this.state.gifs} />
       </div>
