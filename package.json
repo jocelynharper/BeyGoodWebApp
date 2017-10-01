@@ -11,6 +11,7 @@
     "react-bootstrap": "^0.31.3",
     "react-dom": "^16.0.0",
     "react-native": "^0.48.4",
+    "react-polyfill": "0.0.2",
     "react-scripts": "1.0.14",
     "superagent": "^3.6.1"
   },

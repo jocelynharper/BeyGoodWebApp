@@ -19,7 +19,7 @@ h1{
   text-transform: uppercase;
 }
 
-div.footer{
+div.Footer{
   position: fixed;
   margin-top: -50px;
   top: 100%;
@@ -28,7 +28,7 @@ div.footer{
   z-index: 11000;
 }
 
-div.footer img{
+div.Footer img{
   width: 100px;
 }
 
