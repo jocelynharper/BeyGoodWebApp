@@ -13,8 +13,8 @@ class SearchBar extends Component{
 
   render(){
     return(
-      <div className = "Search Bar">
-        <input onChange={event => this.onInputChange(event.target.value)} />
+      <div className = "search-bar">
+        <input placeholder="Search for your favorite Beyoncé .gifs" onChange={event => this.onInputChange(event.target.value)} />
       </div>
     );
   }
