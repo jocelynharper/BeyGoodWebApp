@@ -8,6 +8,7 @@ body {
 p{
   color: white;
   font-size: 10px;
+  text-transform: uppercase;
 }
 
 h1{
@@ -16,6 +17,19 @@ h1{
   font-size: 40px;
   font-family: 'Oswald' sans-serif;
   text-transform: uppercase;
+}
+
+div.footer{
+  position: fixed;
+  margin-top: -50px;
+  top: 100%;
+  left: 100%;
+  margin-left: -120px;
+  z-index: 11000;
+}
+
+div.footer img{
+  width: 100px;
 }
 
 .header{
