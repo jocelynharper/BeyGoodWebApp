@@ -1,24 +1,31 @@
 import React, { Component } from 'react';
 import {ControlLabel, FormControl, FormGroup, mountNode} from 'react-bootstrap';
+import autoBind from 'react-autobind';
 import ReactDOM from 'react-dom';
 import Gifs from './Gifs.js';
 
+var search_criteria = {};
 
 class Search extends Component{
 
   constructor(props){
     super(props)
-    this.state = {}
+    this.state = {value: ''};
+    autoBind(this);
   }
 
-  handleSetValue(value){
+  handleSetValue(event){
     this.setState({
-      value: value.target.innerText
-    }, () => {
-      if(this.props.onChange){
-        this.props.onChange(this.state.value);
-      }
+      value: event.target.value
+    //}, () => {
+      //if(this.props.onChange){
+        //this.props.onChange(this.state.value);
+    //  }
     });
+  }
+
+  makeupafunction(){
+    search_criteria = this.props.onClick(this.state.value.trim());
   }
 
   render() {
@@ -30,9 +37,10 @@ class Search extends Component{
            <ControlLabel>Working example with validation</ControlLabel>
            <FormControl
              type="text"
-             value={this.props.search_criteria}
+             value={this.state.value}
+             onChange={this.handleSetValue}
              placeholder="Enter text"
-             onChange={this.state.value}
+             onKeyUp={this.makeupafunction}
            />
            <FormControl.Feedback />
          </FormGroup>
