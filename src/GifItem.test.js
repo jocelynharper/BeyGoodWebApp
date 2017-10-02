@@ -16,10 +16,3 @@ it('renders correctly', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
 });
-
-/*const result = ('<GifItem />', () => {
-it('Renders 1 GifItem component', () => {
-  const component = shallow(<GifItem />);
-  expect(component).toHaveLength(1);
-  });
-});*/
