@@ -1,8 +1,17 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import ReactDOM from 'react-dom';
 import GifList from './GifList.js'
+import renderer from 'react-test-renderer';
 
-test('SearchBar component should render as expected', () => {
-  const component = shallow(<GifList />)
-  expect(component.contains('Testing a test lol').toBe(true))
-})
+
+it('Div renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<GifList />, div);
+});
+
+it('Image renders correctly', () => {
+  const tree = renderer.create(
+    <Link page="http://www.facebook.com">facebook</Link>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+});
